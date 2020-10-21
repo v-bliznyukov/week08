@@ -1,0 +1,9 @@
+file.txt
+ Inode number: 13792273859695525
+ #hard links : 1
+file1.txt
+ Inode number: 5066549581665196
+ #hard links : 2
+link1.txt
+ Inode number: 5066549581665196
+ #hard links : 2

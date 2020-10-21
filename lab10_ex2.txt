@@ -1,0 +1,19 @@
+vladimir@LAPTOP-I0R288N5:~$ mkdir week10
+
+vladimir@LAPTOP-I0R288N5:~$ cd week10
+
+vladimir@LAPTOP-I0R288N5:~/week10$ nano file.txt
+vladimir@LAPTOP-I0R288N5:~/week10$ cd ..
+vladimir@LAPTOP-I0R288N5:~$ link week10/file.txt _ex2.txt
+vladimir@LAPTOP-I0R288N5:~$ ls -i week10/file.txt
+19703248369960352 week10/file.txt
+vladimir@LAPTOP-I0R288N5:~$ ls -i _ex2.txt
+19703248369960352 _ex2.txt
+vladimir@LAPTOP-I0R288N5:~$ find . -inum 19703248369960352
+./_ex2.txt
+./week10/file.txt
+vladimir@LAPTOP-I0R288N5:~$ find ./week10 -inum 19703248369960352
+./week10/file.txt
+vladimir@LAPTOP-I0R288N5:~$ find ./week10 -inum 19703248369960352 -exec rm {} \;
+vladimir@LAPTOP-I0R288N5:~$ ls -i week10/file.txt
+ls: cannot access 'week10/file.txt': No such file or directory

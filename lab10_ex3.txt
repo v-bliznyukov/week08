@@ -1,0 +1,27 @@
+vladimir@LAPTOP-I0R288N5:~$ nano _ex3.txt
+
+vladimir@LAPTOP-I0R288N5:~$ ls -l _ex3.txt
+-rw-r--rwx 1 vladimir vladimir 7 Oct 20 14:22 _ex3.txt
+
+vladimir@LAPTOP-I0R288N5:~$ chmod a-x ~/_ex3.txt
+
+vladimir@LAPTOP-I0R288N5:~$ ls -l _ex3.txt
+-rw-r--rw- 1 vladimir vladimir 7 Oct 20 14:22 _ex3.txt
+
+vladimir@LAPTOP-I0R288N5:~$ chmod o=rwx,u=rwx ~/_ex3.txt
+
+vladimir@LAPTOP-I0R288N5:~$ ls -l _ex3.txt
+-rwxr--rwx 1 vladimir vladimir 7 Oct 20 14:22 _ex3.txt
+
+As there are 9 bits of i-node information,
+where 3 continuous bits represent permissios for 3 types: 
+Owner, Group, User
+Therefore, each number is a bit representation of there permissions:
+660 -- 1 010 010 100, is disregarding 1st bit: -w--w-r--
+775 -- 1 100 000 111, corresponds to r-----rwx
+777 -- 1 100 001 001, corresponds to r----x--x
+
+final table of permissions: Owner Group User
+                        660 w     w     r    
+                        775 r     none  rwx
+                        777 r     x     x
